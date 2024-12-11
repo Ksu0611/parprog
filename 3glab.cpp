@@ -37,7 +37,6 @@ int main(int argc, char **argv)
 #pragma omp parallel for num_threads(NUMTHREADS)
     for (i = 0; i < ISIZE; i++)
     {
-        #pragma omp parallel for num_threads(NUMTHREADS)
         for (j = 0; j < JSIZE; j++)
         {
             a[i][j] = sin(0.005 * a[i][j]);
@@ -48,7 +47,6 @@ int main(int argc, char **argv)
 #pragma omp parallel for num_threads(NUMTHREADS)
     for (i = 5; i < ISIZE; i++)
     {     
-        #pragma omp parallel for num_threads(NUMTHREADS)
         for (j = 0; j < JSIZE - 2; j++)
         {
             b[i][j] = a[i - 5][j + 2] * 1.5;
