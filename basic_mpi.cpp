@@ -74,7 +74,7 @@ int main(int argc, char **argv)
     else
     {
         printf("%d\n", rank);
-        if (rank == size - 1) /* чтобы последний поток ничего не принимал */
+        if (rank == size - 1) /* чтобы последний поток ничего не отправлял */
         {
             MPI_Recv(&t_end, 1, MPI_DOUBLE, rank - 1, size + 1, MPI_COMM_WORLD, &status);
             for (i = 0; i < nb[rank]; i++)
